@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/islemTextView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/black"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="48dp" />
+
+    <TextView
+        android:id="@+id/sonucTextView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/black"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textSize="48dp" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/btnSayilar"
+        style="@style/hesapMakButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        app:columnCount="4"
+        app:rowCount="5">
+
+        <Button
+            android:id="@+id/btnAC"
+            style="@style/hesapMakButton"
+            android:text="AC"
+            android:textColor="#2237FB" />
+
+        <Button
+            android:id="@+id/btnSil"
+            style="@style/hesapMakButton"
+            android:text="C"
+            android:textColor="#FF8E20" />
+
+        <Button
+            android:id="@+id/btnYuzde"
+            style="@style/hesapMakButton"
+            android:text="%"
+            android:textColor="#009688" />
+
+        <Button
+            android:id="@+id/btnbol"
+            style="@style/hesapMakButton"
+            android:text="/"
+            android:textColor="#F45A5D" />
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/hesapMakButton"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/hesapMakButton"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/hesapMakButton"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btncarp"
+            style="@style/hesapMakButton"
+            android:text="x"
+            android:textColor="#DD3EFF" />
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/hesapMakButton"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/hesapMakButton"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/hesapMakButton"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btncikar"
+            style="@style/hesapMakButton"
+            android:text="-"
+            android:textColor="#1FE2FF" />
+
+        <Button
+            android:id="@+id/btn1"
+            style="@style/hesapMakButton"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/hesapMakButton"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/hesapMakButton"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btntopla"
+            style="@style/hesapMakButton"
+            android:text="+"
+            android:textColor="#FB0328" />
+
+        <Button
+            android:id="@+id/btnParantezAcKapat"
+            style="@style/hesapMakButton"
+            android:text="( )"
+            android:textColor="#54FF0E" />
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/hesapMakButton"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnVirgul"
+            style="@style/hesapMakButton"
+            android:text=","
+            android:textColor="#E91E63" />
+
+        <Button
+            android:id="@+id/btnEsittir"
+            style="@style/hesapMakButton"
+            android:text="="
+            android:textColor="#F3FB00" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+</LinearLayout>
