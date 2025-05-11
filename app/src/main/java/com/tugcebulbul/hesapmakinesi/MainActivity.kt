@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.tugcebulbul.hesapmakinesi.databinding.ActivityMainBinding
+import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             btnSil.setOnClickListener {
                 var islem = binding.islemTextView.text.toString()
                 if (islem.isNotEmpty()) {
-                    binding.islemTextView.text = islem.substring(0, islem.length - 1)  //sonu karakteri siler
+                    binding.islemTextView.text = islem.substring(0, islem.length - 1)  //son karakteri siler
                 }
             }
             btnEsittir.setOnClickListener {
@@ -64,37 +65,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun hesapla() {
         try {
-            var islem = binding.islemTextView.text.toString()
-            val sonuc = when {
-                islem.contains("+") -> {
-                    val sayilar = islem.split("+")
-                    sayilar[0].toDouble() + sayilar[1].toDouble()
-                }
-
-                islem.contains("-") -> {
-                    val sayilar = islem.split("-")
-                    sayilar[0].toDouble() - sayilar[1].toDouble()
-                }
-
-                islem.contains("*") -> {
-                    val sayilar = islem.split("*")
-                    sayilar[0].toDouble() * sayilar[1].toDouble()
-                }
-
-                islem.contains("/") -> {
-                    val sayilar = islem.split("/")
-                    sayilar[0].toDouble() / sayilar[1].toDouble()
-                }
-
-                else -> {
-                    throw IllegalArgumentException("Geçersiz ifade")
-                }
+            val islem = binding.islemTextView.text.toString()
+            val expression = ExpressionBuilder(islem).build()
+            val sonuc = expression.evaluate()
+            val longSonuc = sonuc.toLong()
+            if (sonuc == longSonuc.toDouble()) {
+                binding.sonucTextView.text = longSonuc.toString()
+            } else {
+                binding.sonucTextView.text = sonuc.toString()
             }
-            binding.sonucTextView.text= sonuc.toString()
-            //Hata oluştuğunda yapılacak işlem
-        } catch (e:Exception){
-            binding.sonucTextView.text="Hata: ${e.message}"
+        } catch (e: Exception) {
+            binding.sonucTextView.text = "Hata"
         }
-
     }
 }

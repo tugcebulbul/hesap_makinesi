@@ -51,4 +51,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation ("androidx.gridlayout:gridlayout:1.1.0")
 
+    implementation("net.objecthunter:exp4j:0.4.8")
 }
